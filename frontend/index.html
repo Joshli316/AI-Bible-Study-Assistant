@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Study Assistant / 圣经学习助手</title>
+  <meta name="description" content="Search 25 Bible commentary series using natural language. AI-powered semantic search across 567 files.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>
+        <span data-i18n="title">Bible Study Assistant</span>
+        <small data-i18n="subtitle">Search 25 commentary series</small>
+      </h1>
+      <div class="header-controls">
+        <button class="toggle-btn" id="lang-toggle" aria-label="Toggle language">中文</button>
+        <button class="toggle-btn" id="dark-toggle" aria-label="Toggle dark mode">Dark</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="search-section">
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search commentaries..."
+          aria-label="Search commentaries"
+          autocomplete="off"
+        >
+        <button class="search-btn">Search</button>
+      </div>
+      <div class="filters">
+        <select class="filter-select" id="series-filter" aria-label="Filter by series">
+          <option value="">All Series</option>
+        </select>
+        <select class="filter-select" id="testament-filter" aria-label="Filter by testament">
+          <option value="">All Testaments</option>
+          <option value="OT">Old Testament</option>
+          <option value="NT">New Testament</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="stats-bar"></div>
+    <div id="results"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
