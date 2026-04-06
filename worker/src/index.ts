@@ -82,9 +82,9 @@ export default {
       }
 
       return json({ error: 'Not found' }, 404);
-    } catch (err: any) {
+    } catch (err) {
       console.error('Worker error:', err);
-      return json({ error: err.message || 'Internal error' }, 500);
+      return json({ error: err instanceof Error ? err.message : 'Internal error' }, 500);
     }
   },
 };

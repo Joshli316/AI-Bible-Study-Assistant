@@ -30,10 +30,10 @@ export async function search(
     text: [query],
   });
 
-  const queryVector = (embedding as any).data[0];
+  const queryVector = ((embedding as { data: number[][] }).data)[0];
 
   // Build Vectorize query with optional metadata filters
-  const vectorizeFilter: Record<string, any> = {};
+  const vectorizeFilter: Record<string, string> = {};
   if (filters?.series) vectorizeFilter.series = filters.series;
   if (filters?.testament) vectorizeFilter.testament = filters.testament;
   if (filters?.book) vectorizeFilter.book = filters.book;
